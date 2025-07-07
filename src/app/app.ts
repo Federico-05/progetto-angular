@@ -1,12 +1,17 @@
+// src/app/app.component.ts
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Menu } from './menu/menu';
+import { Navbar } from './navbar/navbar';
+import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, Navbar, Footer, Menu],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
-  protected title = 'angular-frontend';
+export class AppComponent {
+  title = 'angular-frontend';
 }
