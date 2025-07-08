@@ -7,8 +7,23 @@ export const routes: Routes = [
   /* ──────────── Corsi ──────────── */
   {
     path: 'corsi',
-    loadComponent: () =>
-      import('./corsi/corsi').then(m => m.Corsi)
+    children: [
+      {                                         // 1) lista  /corsi
+        path: '',
+        loadComponent: () =>
+          import('./corsi/corsi').then(m => m.Corsi)
+      },
+      {                                         // 2) nuovo  /corsi/nuovo
+        path: 'nuovo',
+        loadComponent: () =>
+          import('./new-corsi/new-corsi').then(m => m.NewCorsi)
+      },
+      {                                         // 3) modifica /corsi/:id
+        path: ':id',
+        loadComponent: () =>
+          import('./new-corsi/new-corsi').then(m => m.NewCorsi)
+      }
+    ]
   },
 
   /* ──────────── Docenti ──────────── */

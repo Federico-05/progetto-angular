@@ -16,7 +16,7 @@ import { Academy } from '../services/academy';
 export class Discenti implements OnInit {
   //discenti: Discente[] = [];
   discenti = signal<Discente[]>([]);
-  loading = true;
+  loading = false;
   error: string | null = null;
 
   private readonly router = inject(Router);

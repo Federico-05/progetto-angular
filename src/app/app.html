@@ -1,3 +1,5 @@
 <app-navbar></app-navbar>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+
+<!-- Mostra il footer solo se siamo nella home page -->
+<app-footer *ngIf="isHomePage"></app-footer>

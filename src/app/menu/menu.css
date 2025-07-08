@@ -1,7 +1,18 @@
+/* Stile globale per la pagina */
+body {
+  display: flex;
+  flex-direction: column;  /* Disporre gli elementi verticalmente */
+  min-height: 100vh;        /* Assicurarsi che il body occupi almeno tutta l'altezza della finestra */
+  margin: 0;
+}
+
+/* Contenitore del menu */
 .menu-container {
   text-align: center;
   padding: 3rem 1rem;
   color: white;
+  border-radius: 8px;
+  margin-bottom: 2rem;
 }
 
 .menu-title {
@@ -9,6 +20,7 @@
   margin-bottom: 2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .menu-buttons {
@@ -31,4 +43,21 @@
 
 .menu-btn:hover {
   background-color: #3700b3;
+}
+
+/* Contenitore del footer */
+
+/* Responsività per dispositivi mobili */
+@media (max-width: 768px) {
+  .menu-btn {
+    padding: 0.8rem 1.5rem;  /* Ridurre la grandezza dei bottoni per dispositivi mobili */
+  }
+
+  .menu-title {
+    font-size: 1.5rem;
+  }
+
+  .footer-container {
+    padding: 10px 0; /* Ridurre il padding del footer per schermi piccoli */
+  }
 }

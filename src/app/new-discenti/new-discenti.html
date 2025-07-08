@@ -16,7 +16,7 @@
            class="input input-bordered w-full"
            formControlName="nome" />
     <p *ngIf="submitted && f.nome.invalid"
-       class="mt-1 text-error text-sm">
+     class="mt-1 text-error text-sm">
       Il nome è obbligatorio
     </p>
   </div>
@@ -69,7 +69,7 @@
   <!-- Bottoni -->
   <div class="flex justify-end gap-2">
     <button type="submit" class="btn btn-primary">Salva</button>
-    <a routerLink="/discenti" class="btn btn-ghost">Annulla</a>
+    <button routerLink="/discenti" class="btn btn-primary">Annulla</button>
   </div>
 
 </form>

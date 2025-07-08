@@ -31,11 +31,11 @@ export class Academy {
 
   /* ---------- UPDATE -------- */
   updateDocente(id: number,  b: Docente)   { return this.http.put<void>(`${this.apiAuth}/docenti/${id}`,   b); }
-  updateDiscente(id: number, b: Discente)  { return this.http.put<void>(`${this.apiAuth}/discenti/${id}`, b); }
+  updateDiscente(id: number, b: Discente)  { return this.http.put<void>(`${this.apiAuth}/discenti/${id}/edit`, b); }
   updateCorso(id: number,    b: Corso)     { return this.http.put<void>(`${this.apiCorsi}/corsi/${id}`,   b); }
 
   /* ---------- DELETE -------- */
   deleteDocente(id: number)  { return this.http.delete<void>(`${this.apiAuth}/docenti/delete/${id}`); }
-  deleteDiscente(id: number) { return this.http.delete<void>(`${this.apiAuth}/discenti/delete/${id}`); }
+  deleteDiscente(id: number) { return this.http.delete<void>(`${this.apiAuth}/discenti/${id}/delete`); }
   deleteCorso(id: number)    { return this.http.delete<void>(`${this.apiCorsi}/corsi/delete/${id}`); }
 }
