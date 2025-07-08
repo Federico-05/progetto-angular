@@ -1,0 +1,75 @@
+<form class="container mx-auto max-w-lg mt-8 p-6 bg-base-100 shadow-xl rounded-box"
+      [formGroup]="form"
+      (ngSubmit)="onSave()">
+
+  <h1 class="text-3xl font-semibold text-primary mb-6 text-center">
+    {{ isEdit ? 'Modifica Discente' : 'Nuovo Discente' }}
+  </h1>
+
+  <!-- Nome -->
+  <div class="form-control mb-4">
+    <label for="nome" class="label">
+      <span class="label-text font-medium">Nome</span>
+    </label>
+    <input id="nome"
+           type="text"
+           class="input input-bordered w-full"
+           formControlName="nome" />
+    <p *ngIf="submitted && f.nome.invalid"
+       class="mt-1 text-error text-sm">
+      Il nome è obbligatorio
+    </p>
+  </div>
+
+  <!-- Cognome -->
+  <div class="form-control mb-4">
+    <label for="cognome" class="label">
+      <span class="label-text font-medium">Cognome</span>
+    </label>
+    <input id="cognome"
+           type="text"
+           class="input input-bordered w-full"
+           formControlName="cognome" />
+    <p *ngIf="submitted && f.cognome.invalid"
+       class="mt-1 text-error text-sm">
+      Il cognome è obbligatorio
+    </p>
+  </div>
+
+  <!-- Età -->
+  <div class="form-control mb-4">
+    <label for="eta" class="label">
+      <span class="label-text font-medium">Età</span>
+    </label>
+    <input id="eta"
+           type="number"
+           class="input input-bordered w-full"
+           formControlName="eta" />
+    <p *ngIf="submitted && f.eta.invalid"
+       class="mt-1 text-error text-sm">
+      L'età è obbligatoria
+    </p>
+  </div>
+
+  <!-- Città di Residenza -->
+  <div class="form-control mb-4">
+    <label for="cittaResidenza" class="label">
+      <span class="label-text font-medium">Città di Residenza</span>
+    </label>
+    <input id="cittaResidenza"
+           type="text"
+           class="input input-bordered w-full"
+           formControlName="cittaResidenza" />
+    <p *ngIf="submitted && f.cittaResidenza.invalid"
+       class="mt-1 text-error text-sm">
+      La città di residenza è obbligatoria
+    </p>
+  </div>
+
+  <!-- Bottoni -->
+  <div class="flex justify-end gap-2">
+    <button type="submit" class="btn btn-primary">Salva</button>
+    <a routerLink="/discenti" class="btn btn-ghost">Annulla</a>
+  </div>
+
+</form>
